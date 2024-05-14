@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Accueil</title>
     <link rel="stylesheet" href="accueil.css">
+    <script src="accueil.js"></script>
 </head>
 
 <body>
@@ -15,19 +16,19 @@
     <div class="formulaire">
         <form>
             <div class="input-wrapper">
-                <input type="text" id="prenom" />
+                <input type="text" id="prenom" required/>
                 <label for="prenom">Prénom</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" id="nom" />
+                <input type="text" id="nom" required/>
                 <label for="nom">Nom</label>
             </div>
 
             <div class="checkbox">
-                <input type="checkbox" name="conditions" class="conditions" />
+                <input type="checkbox" name="conditions" class="conditions" required/>
                 <p>J'accepte les conditions générales</p>
             </div>
-            <input type="submit" value="Participer" />
+            <input type="submit" value="Participer" onclick="return checkForm(this)"/>
         </form>
     </div>
 </body>
