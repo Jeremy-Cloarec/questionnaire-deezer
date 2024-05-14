@@ -5,6 +5,6 @@
 
 ## Démarrage du projet
 npm install\
-npx expo start\
+npx expo start
  
 
