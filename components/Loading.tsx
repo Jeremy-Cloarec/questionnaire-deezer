@@ -24,7 +24,7 @@ export default function Loading({ showComponent }: LoadingProps){
         <View style={styles.container}>
             {showComponent && (
                 <View style={styles.temporaryComponent}>
-                    <Text>Component displayed for 3 seconds</Text>
+                    <Text>Animation 3s</Text>
                 </View>
             )}
         </View>
