@@ -9,15 +9,16 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: "90%",
-        objectFit: "contain",
+        height: "90%",
+        resizeMode: "contain",
     },
 })
-export default function LogoDeezer() {
+export default function LogoDeezer({url}: any) {
     return (
         <View style={styles.container}>
             <Image
                 style={styles.logo}
-                source={require('../assets/deezer.png')}
+                source={(url)}
             />
         </View>
     )

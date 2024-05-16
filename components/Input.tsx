@@ -24,16 +24,9 @@ const styles = StyleSheet.create({
         zIndex:2,
         fontSize: 16,
         fontWeight: "bold",
+        backgroundColor: "black",
+        paddingHorizontal:5,
     },
-    spanView : {
-        position: "absolute",
-        top: -1,
-        left: 18,
-        height: 3,
-        width: 60,
-        backgroundColor: "white",
-        zIndex: 1
-    }
 });
 
 type Props = {
@@ -45,7 +38,6 @@ export default function Input({ label, placeholder, onChangeText}: Props) {
     return (
         <View style={styles.containerInput}>
             <Text style={styles.inputLabel}>{label}</Text>
-            <View style={styles.spanView}></View>
             <TextInput
                 style={styles.input}
                 onChangeText={onChangeText}

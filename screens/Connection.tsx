@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useFocusEffect } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        width:"100%",
+        width: "100%",
         marginTop: -24
     },
 })
@@ -42,8 +42,6 @@ export default function Connection({ navigation }: Props) {
     const [name, onChangeName] = React.useState('Prénom');
     const [surName, onChangesurName] = React.useState('Nom');
     const [showComponent, setShowComponent] = useState(true);
-
-
     const insets = useSafeAreaInsets();
 
     useFocusEffect(
@@ -64,7 +62,7 @@ export default function Connection({ navigation }: Props) {
             ) : (
                 <View style={[styles.container, { paddingTop: insets.top }]}>
                     <View style={styles.containerLogo}>
-                        <LogoDeezer />
+                        <LogoDeezer url={require('../assets/deezer.png')} />
                     </View>
                     <View style={styles.containerInput}>
                         <Input
@@ -78,8 +76,12 @@ export default function Connection({ navigation }: Props) {
                             onChangeText={onChangesurName}
                         />
                         <CheckboxInput />
-                        <ButtonInput navigate={() => navigation.navigate('Begin')} text="Participer" />
-
+                        <ButtonInput
+                            navigate={() => navigation.navigate('Begin')}
+                            text="Participer"
+                            textColor="white"
+                            backgroundColor="#AB47BC"
+                        />
                     </View>
                 </View>
             )}

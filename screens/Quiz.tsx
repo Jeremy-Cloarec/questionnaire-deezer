@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, Button } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import LogoDeezer from '../components/LogoDeezer';
 
 
 type RootStackParamList = {
@@ -18,10 +19,6 @@ export default function Quiz({ navigation }: Props) {
                 <Button
                     title="Retour"
                     onPress={() => navigation.navigate('Begin')}
-                />
-                <Button
-                    title="Question 1"
-                    onPress={() => navigation.navigate('Quiz')}
                 />
             </View>
         </View>
