@@ -1,3 +1,3 @@
 function redirectToQuizPage(){
-    window.location.href = "./quizzPage.html";
+    window.location.href = "./quizPage.html";
 }
