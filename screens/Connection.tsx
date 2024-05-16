@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { Text, View, Button, TextInput, SafeAreaView, StyleSheet } from 'react-native';
+import {  useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useFocusEffect } from '@react-navigation/native';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Loading from '../components/Loading';
 import Input from '../components/Input';
+import ButtonInput from '../components/ButtonInput';
+import CheckboxInput from '../components/CheckoxInput';
 
 type RootStackParamList = {
     Connection: undefined;
@@ -14,10 +16,21 @@ type RootStackParamList = {
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Connection'>;
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 12,
+        gap: 24,
+        justifyContent: 'center',
+        backgroundColor: "black"
+    }
+})
+
 export default function Connection({ navigation }: Props) {
     const [name, onChangeName] = React.useState('Prénom');
     const [surName, onChangesurName] = React.useState('Nom');
     const [showComponent, setShowComponent] = useState(true);
+
 
     const insets = useSafeAreaInsets();
 
@@ -37,42 +50,21 @@ export default function Connection({ navigation }: Props) {
             {showComponent ? (
                 <Loading showComponent={showComponent} />
             ) : (
-                <View style={{ paddingTop: insets.top }}>
-                    <Input text={name} onChangeText={onChangeName}/>
-                    
-                    <Input text={surName} onChangeText={onChangesurName}/>
-
-                    
-                    <Button
-                        title="S'incrire"
-                        onPress={() => navigation.navigate('Begin')}
+                <View style={[styles.container, { paddingTop: insets.top }]}>
+                    <Input
+                        label="Nom"
+                        placeholder={"Entrez votre nom"}
+                        onChangeText={onChangeName}
                     />
+                    <Input
+                        label="Prénom"
+                        placeholder={"Entrez votre prénom"}
+                        onChangeText={onChangesurName}
+                    />
+                    <CheckboxInput />
+                    <ButtonInput navigate={() => navigation.navigate('Begin')} text="Participer" />
                 </View>
             )}
         </>
     );
 }
-/*
-<div class="logo">
-        <img src="./images/logo1.png" alt="logo deezer">
-    </div>
-
-    <div class="formulaire">
-        <form>
-            <div class="input-wrapper">
-                <input type="text" id="prenom" />
-                <label for="prenom">Prénom</label>
-            </div>
-            <div class="input-wrapper">
-                <input type="text" id="nom" />
-                <label for="nom">Nom</label>
-            </div>
-
-            <div class="checkbox">
-                <input type="checkbox" name="conditions" class="conditions" />
-                <p>J'accepte les conditions générales</p>
-            </div>
-            <input type="submit" value="Participer" />
-        </form>
-    </div>
-*/
