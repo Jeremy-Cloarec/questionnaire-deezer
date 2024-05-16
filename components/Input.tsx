@@ -4,8 +4,10 @@ import { Text, TextInput, StyleSheet, View } from 'react-native';
 const styles = StyleSheet.create({
     containerInput:{
         position: "relative",
+        width: "100%"
     },
     input: {
+        width: "100%",
         height: 50,
         padding: 10,
         backgroundColor: "black",

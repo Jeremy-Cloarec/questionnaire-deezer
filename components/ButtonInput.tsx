@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         alignItems: "center",
+        width: "100%",
     },
     textButton: {
         color: "white",
