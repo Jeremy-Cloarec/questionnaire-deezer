@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Text, View, Button } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import * as React from 'react';
+import { Button, Text, View } from 'react-native';
 
 
 type RootStackParamList = {
