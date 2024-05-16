@@ -1,13 +1,13 @@
-import * as React from 'react';
-import {  useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useFocusEffect } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import * as React from 'react';
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Loading from '../components/Loading';
-import Input from '../components/Input';
 import ButtonInput from '../components/ButtonInput';
 import CheckboxInput from '../components/CheckoxInput';
+import Input from '../components/Input';
+import Loading from '../components/Loading';
 
 type RootStackParamList = {
     Connection: undefined;
